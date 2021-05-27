@@ -8,13 +8,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     TasksModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'ec2-54-243-92-68.compute-1.amazonaws.com',
-
+      host: 'batyr.db.elephantsql.com',
       port: 5432,
-      username: 'klzbshzulbapse',
-      password:
-        '23450afd0dbbe34a4adcdb5ab680e2989b5824a213ff81e660e509afb46bc151',
-      database: 'd6ebfp1vkq804n',
+      username: 'jjyxrbzc',
+      password: 'CbhVe8HSWRUVUrcQ2WjRSfNvsbgKIb9i',
+      database: 'jjyxrbzc',
       autoLoadEntities: true,
       synchronize: true,
     }),
