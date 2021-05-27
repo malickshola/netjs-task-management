@@ -6,10 +6,12 @@ import { Task } from './task.entity';
 @EntityRepository(Task)
 export class TaskRepository extends Repository<Task> {
   async createTask(createTaskDto: CreateTaskDto): Promise<Task> {
-    const { title, description } = createTaskDto;
+    const { title, description, startDate, dueDate } = createTaskDto;
     const task = this.create({
       title,
       description,
+      startDate,
+      dueDate,
       status: TaskStatus.OPEN,
     });
 

@@ -18,7 +18,9 @@ import { TasksService } from './tasks.service';
 
 import { get } from 'http';
 import { Task } from './task.entity';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Tasks')
 @Controller('tasks')
 export class TasksController {
   constructor(private taskService: TasksService) {}

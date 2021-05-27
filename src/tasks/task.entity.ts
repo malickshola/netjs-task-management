@@ -12,5 +12,14 @@ export class Task {
   description: String;
 
   @Column()
+  creationDate: Date = new Date();
+
+  @Column()
+  startDate: Date;
+
+  @Column()
+  dueDate: Date;
+
+  @Column()
   status: TaskStatus;
 }

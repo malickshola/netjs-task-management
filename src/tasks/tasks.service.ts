@@ -44,10 +44,12 @@ export class TasksService {
 
   async updateTask(id: string, updateTaskDto: UpdateTaskDto): Promise<Task> {
     const task = await this.getTaskById(id);
-    const { title, description, status } = updateTaskDto;
+    const { title, description, startDate, dueDate, status } = updateTaskDto;
     task.title = title ? title : task.title;
     task.description = description ? description : task.description;
     task.status = status ? status : task.status;
+    task.startDate = startDate ? startDate : task.startDate;
+    task.dueDate = dueDate ? dueDate : task.dueDate;
 
     await this.taskRepository.save(task);
     return task;
