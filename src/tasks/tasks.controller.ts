@@ -25,7 +25,7 @@ import { ApiTags } from '@nestjs/swagger';
 export class TasksController {
   constructor(private taskService: TasksService) {}
 
-  @Get('/:id')
+  @Get(':id')
   getTaskById(@Param('id') id: string): Promise<Task> {
     return this.taskService.getTaskById(id);
   }
@@ -45,7 +45,7 @@ export class TasksController {
     return this.taskService.deleteTask(id);
   }
 
-  @Patch('/:id')
+  @Patch(':id')
   updateTaskStatus(
     @Param('id') id: string,
     @Body() updateTaskDto: UpdateTaskDto,
